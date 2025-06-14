@@ -1,0 +1,147 @@
+:root {
+    --color-white-100: hsl(0, 0%, 100%);
+    --color-white-200: hsl(0, 0%, 96%);
+    --color-black-100: hsla(0, 0%, 10%, 0);
+    --color-black-200: hsla(0, 0%, 5%, 0);
+    --color-purple-100: hsl(254, 88%, 90%);
+    --color-purple-200: #4dff29;
+    --color-yellow-100: hsl(31, 66%, 93%);
+    --color-yellow-200: #4dff29;
+  
+    --display-small: clamp(1.71rem, calc(0.39vw + 1.64rem), 1.95rem);
+    --display-medium: clamp(2.47rem, calc(0.56vw + 2.36rem), 2.9rem);
+  
+    --shadow-medium: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+  }
+  
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background-color: var(--color-black-200);
+    color: var(--color-white-100);
+    margin: 0;
+    padding: 0;
+  }
+  
+  main,
+  section {
+    overflow: hidden;
+  }
+  
+  .section {
+    padding-top: 0;
+    padding-bottom: 3rem;
+    margin-inline: auto;
+  }
+  
+  .container {
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: grid;
+  }
+  
+  .bento-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "social"
+      "multiple"
+      "consistency"
+      "timing"
+      "follower"
+      "growth"
+      "schedule"
+      "content";
+    gap: 1.25rem;
+  }
+  
+  .bento-item {
+    display: grid;
+    gap: 1rem;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-medium);
+    color: var(--color-white-100);
+  }
+  
+  .bento-item h2 {
+    font-size: var(--display-small);
+  }
+  
+  .bento-item p {
+    max-width: 50ch;
+    line-height: 1.5;
+  }
+  
+  /* Text color utilities */
+  .text-purple {
+    color: var(--color-purple-200);
+  }
+  
+  .text-yellow {
+    color: var(--color-yellow-200);
+  }
+  
+  .schedule {
+    grid-area: schedule;
+  }
+  
+  .social {
+    grid-area: social;
+    text-align: center;
+  }
+  
+  .timing {
+    grid-area: timing;
+    text-align: center;
+  }
+  
+  .content {
+    grid-area: content;
+  }
+  
+  .multiple {
+    grid-area: multiple;
+  }
+  
+  .growth {
+    grid-area: growth;
+  }
+  
+  .consistency {
+    grid-area: consistency;
+  }
+  
+  .follower {
+    grid-area: follower;
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .bento-column {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "schedule social social timing"
+        "schedule multiple consistency timing"
+        "content multiple consistency timing"
+        "content growth follower follower";
+    }
+  
+    .bento-item {
+      padding: 2rem;
+    }
+  
+    .social h2,
+    .growth h2 {
+      font-size: var(--display-medium);
+    }
+  
+    .follower {
+      text-align: left;
+    }
+  }
+  

@@ -1,0 +1,166 @@
+.card {
+    width: 210px;
+    height: 400px;
+    background: black;
+    border-radius: 35px;
+    border: 2px solid rgb(40, 40, 40);
+    padding: 7px;
+    position: relative;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+  }
+  
+  .card-int {
+    background-image: linear-gradient(to right bottom, #ffffff, #ecfab6, #cbfb84, #8aff50, #7aff21, #4dff29, #05ff8f, #03d963, #029d52, #028a51, #006336, #003a2d);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    height: 100%;
+    border-radius: 25px;
+    transition: all 0.6s ease-out;
+    overflow: hidden;
+  }
+  
+  .card:hover .card-int {
+    background-position: 100% 100%;
+  }
+  
+  .top {
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 35%;
+    height: 18px;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .speaker {
+    position: absolute;
+    top: 2px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 40%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgb(20, 20, 20);
+  }
+  
+  .camera {
+    position: absolute;
+    top: 6px;
+    right: 84%;
+    transform: translate(50%, 0%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.048);
+  }
+  
+  .int {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(0, 0, 255, 0.212);
+  }
+  
+  .btn1, .btn2, .btn3, .btn4 {
+    position: absolute;
+    width: 2px;
+  }
+  
+  .btn1, .btn2, .btn3 {
+    height: 45px;
+    top: 30%;
+    right: -4px;
+    background-image: linear-gradient(to right, #111111, #222222, #333333, #464646, #595959);
+  }
+  
+  .btn2, .btn3 {
+    transform: scale(-1);
+    left: -4px;
+  }
+  
+  .btn2, .btn3 {
+    height: 30px;
+  }
+  
+  .btn2 {
+    top: 26%;
+  }
+  
+  .btn3 {
+    top: 36%;
+  }
+  
+  .hello {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .default-image {
+    width: 60px;
+    height: auto;
+    transition: opacity 0.4s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hover-content {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+  }
+  
+  .join-text {
+    font-size: 0rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .bottom-image {
+    width: 180px;
+    height: auto;
+  }
+  
+  .card:hover .default-image {
+    opacity: 0;
+  }
+  
+  .card:hover .hover-content {
+    opacity: 1;
+  }
+  
+  
+  .card:hover .default-image {
+    opacity: 0;
+  }
+  
+  .card:hover .hidden {
+    opacity: 1;
+  }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
