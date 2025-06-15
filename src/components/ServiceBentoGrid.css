@@ -60,17 +60,19 @@
     gap: 1rem;
     padding: 2.5rem;
     border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-medium);
+    background: rgba(255, 255, 255, 0.05); /* reduced opacity for a sleeker look */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* thinner border */
+    box-shadow: 0 0 12px rgba(77, 255, 41, 0.1); /* faint green glow */
     color: var(--color-white-100);
-  }
-  
-  .bento-item h2 {
-    font-size: var(--display-small);
-  }
+    transition: box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+    box-shadow: 0 0 18px #4dff29; /* glowing on hover */
+}
+
   
   .bento-item p {
     max-width: 50ch;

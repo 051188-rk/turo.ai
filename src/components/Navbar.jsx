@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // <-- Routing component
 import '../global.css';
 
 const navLinks = [
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Services', href: '#services' },
-  { label: 'Search', href: '#search' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Services', href: '/services' },
+  { label: 'Search', href: '/search' },
 ];
 
 const Navbar = () => {
@@ -50,9 +51,9 @@ const Navbar = () => {
         }}
       >
         {navLinks.map((link) => (
-          <a
+          <Link
             key={link.label}
-            href={link.href}
+            to={link.href}
             style={{
               color: '#fff',
               fontWeight: 600,
@@ -66,14 +67,14 @@ const Navbar = () => {
             className="poppins nav-underline"
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
 
       {/* Login Button */}
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', paddingRight: '1rem' }}>
-        <a
-          href="/login"
+        <Link
+          to="/login"
           style={{
             background: 'linear-gradient(135deg, #4DFF29, #9FFF62)',
             color: '#181818',
@@ -89,7 +90,7 @@ const Navbar = () => {
           className="poppins login-popout"
         >
           Login
-        </a>
+        </Link>
       </div>
 
       <style>{`

@@ -1,71 +1,217 @@
 import React from "react";
-import "./PricingPlans.css";
+import Navbar from "./Navbar"; // Adjust the path if necessary
 
-const plans = [
+const cardData = [
   {
-    name: "Basic",
-    price: "₹499",
-    period: "/ month",
-    description: "Best for individuals",
-    tag: "POPULAR",
+    price: "$19",
+    features: [
+      "Connect 20 websites",
+      "Connect up to 2 bank accounts",
+      "Track up to 10 credit cards",
+      "Basic analytics support",
+      "Export up to 3 months data",
+      "Cloud service 12/5"
+    ],
+    popular: false,
   },
   {
-    name: "Pro",
-    price: "₹1299",
-    period: "/ month",
-    description: "Best for growing startups and growth companies",
-    tag: "MOST POPULAR",
+    price: "$29",
+    features: [
+      "Connect 80 websites",
+      "Connect up to 5 bank accounts",
+      "Track up to 50 credit cards",
+      "Analytics support",
+      "Export up to 12 months data",
+      "Cloud service 24/7"
+    ],
+    popular: true,
   },
   {
-    name: "Enterprise",
-    price: "₹2999",
-    period: "/ month",
-    description: "Custom for large organizations",
-    tag: "FOR ENTERPRISES",
+    price: "$49",
+    features: [
+      "Unlimited websites",
+      "Unlimited bank accounts",
+      "Unlimited credit cards",
+      "Advanced analytics",
+      "Export all-time data",
+      "Priority cloud support"
+    ],
+    popular: false,
   },
+  {
+    price: "$10",
+    features: [
+      "Connect 5 websites",
+      "1 bank account",
+      "Track 3 credit cards",
+      "Basic insights",
+      "Export 1 month data",
+      "Limited support"
+    ],
+    popular: false,
+  },
+  {
+    price: "$79",
+    features: [
+      "White-label access",
+      "Multi-user support",
+      "Full analytics + reports",
+      "Export everything",
+      "AI forecasting",
+      "Dedicated engineer"
+    ],
+    popular: false,
+  },
+  {
+    price: "$5",
+    features: [
+      "2 websites",
+      "No bank sync",
+      "No card tracking",
+      "Manual export",
+      "Community support",
+      "Limited updates"
+    ],
+    popular: false,
+  }
 ];
 
-const PricingPlans = () => (
-  <section
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      gap: "2rem",
-      flexWrap: "wrap",
-      padding: "4rem 2rem",
-    }}
-  >
-    {plans.map((plan, index) => (
-      <div
-        key={index}
-        className={`card-container ${index === 1 ? "lit" : ""}`} // Only middle card gets the "lit" class
-      >
-        <div className="title-card">
-          <p>{plan.tag}</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M10.277 16.515c.005-.11.187-.154.24-.058c.254.45.686 1.111 1.177 1.412c.49.3 1.275.386 1.791.408c.11.005.154.186.058.24c-.45.254-1.111.686-1.412 1.176s-.386 1.276-.408 1.792c-.005.11-.187.153-.24.057c-.254-.45-.686-1.11-1.176-1.411s-1.276-.386-1.792-.408c-.11-.005-.153-.187-.057-.24c.45-.254 1.11-.686 1.411-1.177c.301-.49.386-1.276.408-1.791m8.215-1c-.008-.11-.2-.156-.257-.062c-.172.283-.421.623-.697.793s-.693.236-1.023.262c-.11.008-.155.2-.062.257c.283.172.624.42.793.697s.237.693.262 1.023c.009.11.2.155.258.061c.172-.282.42-.623.697-.792s.692-.237 1.022-.262c.11-.009.156-.2.062-.258c-.283-.172-.624-.42-.793-.697s-.236-.692-.262-1.022M14.704 4.002l-.242-.306c-.937-1.183-1.405-1.775-1.95-1.688c-.545.088-.806.796-1.327 2.213l-.134.366c-.149.403-.223.604-.364.752c-.143.148-.336.225-.724.38l-.353.141l-.248.1c-1.2.48-1.804.753-1.881 1.283c-.082.565.49 1.049 1.634 2.016l.296.25c.325.275.488.413.58.6c.094.187.107.403.134.835l.024.393c.093 1.52.14 2.28.634 2.542s1.108-.147 2.336-.966l.318-.212c.35-.233.524-.35.723-.381c.2-.032.402.024.806.136l.368.102c1.422.394 2.133.591 2.52.188c.388-.403.196-1.14-.19-2.613l-.099-.381c-.11-.419-.164-.628-.134-.835s.142-.389.365-.752l.203-.33c.786-1.276 1.179-1.914.924-2.426c-.254-.51-.987-.557-2.454-.648l-.379-.024c-.417-.026-.625-.039-.806-.135c-.18-.096-.314-.264-.58-.6m-5.869 9.324C6.698 14.37 4.919 16.024 4.248 18c-.752-4.707.292-7.747 1.965-9.637c.144.295.332.539.5.73c.35.396.852.82 1.362 1.251l.367.31l.17.145c.005.064.01.14.015.237l.03.485c.04.655.08 1.294.178 1.805"
-            ></path>
-          </svg>
+const PricingPlans = () => {
+  return (
+    <div style={styles.pageWrapper}>
+      {/* Include Navbar */}
+      <Navbar />
+
+      {/* Anchor target */}
+      <div style={styles.wrapper} id="pricing">
+        <div style={styles.headerSection}>
+          <h2 style={styles.heading}>Choose a plan</h2>
+          <img
+            src="/plan-image.png"
+            alt="plans"
+            style={styles.image}
+          />
         </div>
-        <div className="card-content">
-          <p className="title">{plan.name}</p>
-          <p className="plain">
-            <span>{plan.price}</span>
-            <span>{plan.period}</span>
-          </p>
-          <p className="description">{plan.description}</p>
-          <button className="card-btn">Sign Up with {plan.name}</button>
+
+        <div style={styles.cardContainer}>
+          {cardData.map((card, idx) => (
+            <div key={idx} style={styles.card}>
+              {card.popular && <div style={styles.badge}>Most Popular</div>}
+              <p style={styles.price}>{card.price}</p>
+              <a href="#" style={styles.action}>Get Started</a>
+              <ul style={styles.lists}>
+                {card.features.map((feat, i) => (
+                  <li key={i} style={styles.list}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      style={styles.icon}
+                    >
+                      <path
+                        fill="#ffffff"
+                        d="M21.5821 5.54289C21.9726 5.93342 21.9726 6.56658 21.5821 6.95711L10.2526 18.2867C9.86452 18.6747 9.23627 18.6775 8.84475 18.293L2.29929 11.8644C1.90527 11.4774 1.89956 10.8443 2.28655 10.4503C2.67354 10.0562 3.30668 10.0505 3.70071 10.4375L9.53911 16.1717L20.1679 5.54289C20.5584 5.15237 21.1916 5.15237 21.5821 5.54289Z"
+                      />
+                    </svg>
+                    <span style={{ marginLeft: "1rem" }}>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </section>
-);
+    </div>
+  );
+};
+
+const styles = {
+  pageWrapper: {
+    backgroundColor: "#0d0d0d",
+    minHeight: "100vh",
+    color: "#fff",
+    fontFamily: "sans-serif",
+  },
+  wrapper: {
+    padding: "2rem",
+  },
+  headerSection: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "2rem",
+    flexWrap: "wrap",
+  },
+  heading: {
+    fontSize: "2rem",
+    fontWeight: "bold",
+  },
+  image: {
+    maxWidth: "200px",
+    borderRadius: "1rem",
+  },
+  cardContainer: {
+    display: "flex",
+    overflowX: "auto",
+    gap: "1.5rem",
+    paddingBottom: "1rem",
+    scrollbarWidth: "none",
+  },
+  card: {
+    flex: "0 0 auto",
+    minWidth: "300px",
+    backgroundColor: "#1a1a1a",
+    padding: "1.5rem",
+    borderRadius: "1.5rem",
+    position: "relative",
+  },
+  badge: {
+    position: "absolute",
+    top: "1rem",
+    right: "1rem",
+    background: "#4dff29",
+    color: "#000",
+    fontSize: "0.75rem",
+    padding: "0.25rem 0.5rem",
+    borderRadius: "9999px",
+    fontWeight: "bold",
+  },
+  price: {
+    fontSize: "2.5rem",
+    fontWeight: "300",
+    margin: 0,
+  },
+  action: {
+    marginTop: "1.5rem",
+    display: "inline-block",
+    width: "100%",
+    textAlign: "center",
+    padding: "0.625rem 1.5rem",
+    borderRadius: "9999px",
+    backgroundColor: "#fff",
+    color: "#000",
+    textDecoration: "none",
+    fontWeight: "500",
+    transition: "0.3s all ease-in-out",
+  },
+  lists: {
+    listStyle: "none",
+    marginTop: "1.5rem",
+    padding: 0,
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.75rem",
+    fontSize: "0.875rem",
+  },
+  list: {
+    display: "flex",
+    alignItems: "center",
+  },
+  icon: {
+    width: "1rem",
+    height: "1rem",
+    flexShrink: 0,
+  }
+};
 
 export default PricingPlans;
