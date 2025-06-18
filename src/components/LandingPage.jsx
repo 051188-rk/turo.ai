@@ -1,7 +1,5 @@
 import React from 'react';
 import HeroSection from './HeroSection';
-import ServiceBentoGrid from './ServiceBentoGrid';
-import PricingPlans from './PricingPlans';
 import '../global.css';
 import TrustedCompanies from '../components/TrustedCompanies';
 import MascotRow from '../components/MascotRow';
@@ -42,14 +40,11 @@ const MascotRow = () => (
   </div>
 );
 
-
 const LandingPage = () => (
   <>
     <HeroSection />
     <TrustedCompanies />
-    <ServiceBentoGrid />
     <MascotRow />
-    <PricingPlans />
     <Footer />
   </>
 );

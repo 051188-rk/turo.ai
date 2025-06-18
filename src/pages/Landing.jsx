@@ -1,10 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import ServiceBentoGrid from '../components/ServiceBentoGrid';
-import PricingPlans from '../components/PricingPlans';
 import '../global.css';
 import Footer from '../components/Footer';
+import BentoGrid from '../components/bentogrid';
 
 const Landing = () => {
   return (

@@ -71,8 +71,8 @@ const Navbar = () => {
         ))}
       </div>
 
-      {/* Login Button */}
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', paddingRight: '1rem' }}>
+      {/* Login Button Only */}
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', paddingRight: '2.5rem' }}>
         <Link
           to="/login"
           style={{
@@ -86,6 +86,7 @@ const Navbar = () => {
             cursor: 'pointer',
             textDecoration: 'none',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            marginRight: '2rem',
           }}
           className="poppins login-popout"
         >

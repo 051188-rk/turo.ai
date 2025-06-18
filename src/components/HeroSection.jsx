@@ -7,6 +7,13 @@ import bgImage from '../assets/bg.png';
 import mascot from '../assets/mascot1.png';
 import mascot2 from '../assets/mascot2.png';
 import mascot3 from '../assets/mascot3.png';
+import b1 from '../assets/b1.jpeg';
+import b2 from '../assets/b2.jpeg';
+import b3 from '../assets/b3.jpg';
+import b4 from '../assets/b4.png';
+import b5 from '../assets/b5.jpg';
+import b6 from '../assets/b6.jpeg';
+import vg from '../assets/vg.png';
 
 
 const HeroSection = () => (
@@ -16,7 +23,7 @@ const HeroSection = () => (
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '0rem 12rem 4rem 12rem',
-    backgroundImage: `url(${bgImage})`,
+    backgroundImage: `url(${b4})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
@@ -28,33 +35,33 @@ const HeroSection = () => (
 
     {/* Left: Text Content */}
     <div style={{ maxWidth: '60%', zIndex: 2 }}>
-      <h1 style={{
-        fontFamily: 'Poppins, sans-serif',
-        fontWeight: 'bold',
-        fontSize: '3.5rem',
-        lineHeight: 1.1,
-        margin: 0,
-        maxWidth: '900px',
-      }}>
-        The Smartest Way to <span style={{
-          background: '#4dff29',
-          color: '#181818',
-          padding: '0.2em 0.5em',
-          borderRadius: '0.25em',
-          display: 'inline-block',
-          transform: 'rotate(-2deg)'
-        }}>Search</span> Everything.
-      </h1>
+  <h1 style={{
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '3.5rem',
+    lineHeight: 1.1,
+    margin: 0,
+    maxWidth: '900px',
+  }}>
+    The Smartest Way to <span className="highlight" style={{
+      background: '#4dff29',
+      color: '#181818',
+      padding: '0.2em 0.5em',
+      borderRadius: '0.25em',
+      display: 'inline-block',
+      transform: 'rotate(-2deg)'
+    }}>Search</span> Everything.
+  </h1>
+  <p style={{
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '1.35rem',
+    margin: '2rem 0 2.5rem 0',
+    color: '#ccc',
+    maxWidth: '600px',
+  }}>
+    Use AI to find anything, anywhere — instantly. Relevant results in milliseconds.
+  </p>
 
-      <p style={{
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '1.35rem',
-        margin: '2rem 0 2.5rem 0',
-        color: '#ccc',
-        maxWidth: '600px',
-      }}>
-        Use AI to find anything, anywhere — instantly. Relevant results in milliseconds.
-      </p>
 
       <div className="ai-wrapper">
       <div className="ai-container">

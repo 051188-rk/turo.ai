@@ -1,21 +1,21 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Landing from './pages/Landing';
-import PricingPage from './components/PricingPlans';
-import Navbar from './components/Navbar';
+import Chat from './pages/Chat';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        {/* Add more routes here */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
